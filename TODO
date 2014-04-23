@@ -1,0 +1,10 @@
+### TODO
+* Fix issue when no -x is specified, defaults to 'root@ip@ip'
+* if 'server create' fails, server is left running
+* image name prefix matching
+* add 'image list' command
+
+### DONE
+* knife google setup instructions in README is wrong
+* "access" token for auto-refresh, comment fix
+* Set default file permissions to 0600 for ~/.google-compute.json

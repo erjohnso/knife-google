@@ -112,6 +112,8 @@ module Google
             "expires_in"=>expires_in,"refresh_token"=> refresh_token, "id_token"=>id_token,
             "issued_at"=>issued_at,"project"=>project }, :pretty=>true))
         end
+        # Make sure file is 0600
+        File.chmod(0600, credential_file)
       end
 
       def projects
@@ -197,7 +199,7 @@ module Google
                 raise BadRequest, result.response.body 
               elsif error_code == 401
                 # ok, our credentials aren't working, we need
-                # to get a new refresh token and retry
+                # to get a new access token and retry
                 @api_client.authorization.fetch_access_token!
                 Client.save_credentials(@project, @api_client, @credential_file)
                 return dispatch(opts)

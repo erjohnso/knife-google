@@ -49,11 +49,11 @@ will first need to authorize its use of the Google Compute Engine API.
 Authorization to use any of Google's Cloud service API's utilizes the
 [OAuth 2.0](https://developers.google.com/accounts/docs/OAuth2) standard.
 Once your project has been created, log in to your Google Account and visit the
-[API Console](http://code.google.com/apis/console) and follow the "API Access"
-menu.  Create a new "Client ID" and specify the
+[Developers Console](http://console.developers.google.com/) and go to "API
+Access" -&gt; "Credentials" section.  Create a new 
 [Installed Application](https://developers.google.com/accounts/docs/OAuth2#installed)
-Application type with sub-type "Other".  These actions will generate a new
-"Client ID", "Client secret", and "Redirect URI's".
+Application type with application type set to "Other".  These actions will
+generate a new "Client ID", "Client secret", and "Redirect URI's".
 
 This knife plugin includes a 'setup' sub-command that requires you to supply
 the client ID and secret in order to obtain an "authorization token".  You
@@ -110,8 +110,7 @@ id/secrete in order to authorize the plugin.
   ```
 
 By default, the credential and token information will be stored in
-`~/.google-compute.json`.  You can override this location with
-`-f <credential_file>` flag with all plugin commands.
+`~/.google-compute.json`.
 
 ### Bootstrap Preparation and SSH
 
@@ -211,10 +210,8 @@ instance,
 ### knife google setup
 
 Use this command to initially set up authorization (see above for more
-details).  Note that if you override the default credential file with the
-`-f` switch, you'll need to use the `-f` switch for *all* sub-commands.
-When prompted, make sure to specify the "Project ID" (and not the name or
-number) or you will see 404/not found errors even if the setup command
+details).  When prompted, make sure to specify the "Project ID" (and not the
+name or number) or you will see 404/not found errors even if the setup command
 completes successfully.
 
 ### knife google zone list
